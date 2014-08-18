@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Trace" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %class{1} %M - %msg%xEx%n" />
+        </Console>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n" />
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+        </Console>
+        <File name="TraceFile" fileName="${sys:apm.home}/logs/trace.log">
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %class{1} %M - %msg%xEx%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.automic.pm.cli.CommandLineParser" level="INFO" additivity="false">
+            <AppenderRef ref="TraceFile" />
+        </Logger>
+        <Logger name="com.automic.pm.config" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
+        <Logger name="com.automic.pm.PackageManager" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
+         <Logger name="com.automic.pm.updater.runner.InitGitRunner" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="TraceFile" />
+        </Logger>
+        <Logger name="com.automic.pm.updater.runner.FetchGitRunner" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="TraceFile" />
+        </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="TraceFile" />
+        </Root>
+    </Loggers>
+</Configuration>

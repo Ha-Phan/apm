@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?>
+<login>
+	<default>
+		<login src="adm">
+			<system>UC4</system>
+			<client>1</client>
+			<name>UC</name>
+			<department>UC</department>
+			<passw />
+			<language>E</language>
+		</login>
+	</default>
+	<user-username-Template>
+		<login src="adm">
+			<system>UC4</system>
+			<client>1</client>
+			<name>UC</name>
+			<department>UC</department>
+			<passw />
+			<language>E</language>
+		</login>
+	</user-username-Template>
+</login>

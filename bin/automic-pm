@@ -1,0 +1,20 @@
+#!/bin/sh
+CURRENT_DIR=`pwd`
+PM_BIN="$(cd "$(dirname "$0")"; pwd)"
+PM_HOME="$(dirname "$PM_BIN")"
+
+APM_UPDATE_TXT="$PM_BIN/update-apm.txt"
+if [ -f $APM_UPDATE_TXT ]; then
+	rm $APM_UPDATE_TXT
+fi
+
+java ${JAVA_OPTS} -Dlog4j.configurationFile="$PM_HOME/conf/log4j/log4j2-test.xml" -Dapm.home="$PM_HOME" -classpath "$PM_HOME:$PM_HOME/lib/*" com.automic.pm.PackageManager "$@"
+
+if [ -f $APM_UPDATE_TXT ]; then
+	COMMAND="`cat $APM_UPDATE_TXT`"
+	rm $APM_UPDATE_TXT
+	exec $COMMAND
+fi
+retcode=$?
+cd $CURRENT_DIR
+exit $retcode

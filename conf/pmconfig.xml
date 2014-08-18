@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<configuration>
+	<index>
+		<url>git@github.com:Automic/Index.git</url>
+	</index>
+	<localRepo>
+		<location></location>
+	</localRepo>
+	<autoUpdate>
+		<apm.url>$pm.autoupdate.apm.url</apm.url>
+		<updater.url>$pm.autoupdate.updater.url</updater.url>
+	</autoUpdate>
+</configuration>

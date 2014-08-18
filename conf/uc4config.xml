@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<configuration>
+	<timeout>60</timeout>
+	<connections>
+		<connection name="UC4" system="UC4">
+  <cp ip="127.0.0.1" port="2217" />
+  <cp ip="127.0.0.1" port="2218" />
+</connection>
+	</connections>
+</configuration>

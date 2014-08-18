@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?>
+<login>
+	<default>
+		<login src="adm">
+			<system>$pm.login.default.system</system>
+			<client>$pm.login.default.client</client>
+			<name>$pm.login.default.name</name>
+			<department>$pm.login.default.department</department>
+			<passw />
+			<language>E</language>
+		</login>
+	</default>
+	<user-username-Template>
+		<login src="adm">
+			<system>$pm.login.user1.system</system>
+			<client>$pm.login.user1.client</client>
+			<name>$pm.login.user1.name</name>
+			<department>$pm.login.user1.department</department>
+			<passw />
+			<language>E</language>
+		</login>
+	</user-username-Template>
+</login>
